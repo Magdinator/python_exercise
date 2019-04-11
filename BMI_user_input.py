@@ -40,14 +40,19 @@ def sex_in():
             break
     return sex
 
-def bmi_count():
+def bmi_count(weight, height):
+    return weight/height**2
+
+
+def bmi_result():
     weight = weight_in()
     height = height_in()
-    result= weight/height**2
+    result = bmi_count(weight, height)
     return result
 
+
 def bmi_score():
-    result = bmi_count()
+    result = bmi_result()
     print("Your BMI is: {}".format(result))
     if (result < 18.5):
         print("You are underweight.")
@@ -81,5 +86,5 @@ def bmr():
     return result
 
 
-
+bmi_score()
 
