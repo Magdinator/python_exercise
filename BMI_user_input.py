@@ -4,31 +4,26 @@ IBM calculator and daily calorie needs (BMR) check (Mifflin-St Jeor method)
 
 
 # collecting information from user
-def weight_in():
+
+def user_in(input_text):
     while True:
         try:
-            weight = float(input("Provide your weight in kilograms: "))
+            question = float(input(input_text))
             break
         except ValueError:
             print("Incorrect input, try again")
+    return question
+
+def weight_in():
+    weight = user_in("Provide your weight in kilograms: ")
     return weight
 
 def height_in():
-    while True:
-        try:
-            height = float(input("Provide your height in meters: "))
-            break
-        except ValueError:
-            print("Incorrect input, try again")
+    height = user_in("Provide your height in meters: ")
     return height
 
 def age_in():
-    while True:
-        try:
-            age = float(input("Provide your age in years: "))
-            break
-        except ValueError:
-            print("Incorrect input, try again")
+    age = user_in("Provide your age in years: ")
     return age
 
 def sex_in():
@@ -87,4 +82,4 @@ def bmr():
 
 
 bmi_score()
-
+bmr()
